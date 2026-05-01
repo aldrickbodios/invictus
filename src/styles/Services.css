@@ -1,0 +1,76 @@
+.section {
+    padding: 60px 40px;
+    text-align: center;
+    background: var(--bg);
+    color: black;
+    scroll-margin-top: 70px;
+}
+
+.section h2 {
+    font-size: var(--text-h2);
+    margin-bottom: 20px;
+}
+
+.section > p{
+    font-size: var(--text-base);
+    margin-bottom: 40px;
+    color: var(--text-muted);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    height: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-rep {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.service-rep img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+}
+
+.service-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #fff;
+    color: var(--primary);
+    text-align: center;
+    padding: 13px;
+    line-height: 1;
+    border-radius: 5px;
+}
+
+.service-desc {
+    font-size: 0.9rem;
+    padding: 20px;
+    text-align: left;
+}
+
+.service-desc p {
+    margin-top: 20px;
+    color: #444;
+}
