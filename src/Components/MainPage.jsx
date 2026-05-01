@@ -9,6 +9,8 @@ import { services } from "../data/services.js"
 import { projects } from "../data/projects.js"
 import { ContactIcons, StatIcons } from "../assets/icons.js"
 
+import { images } from "../assets/images.js"
+
 const MainPage = () => {
 
     const getDurationText = (months) => {
@@ -62,11 +64,7 @@ const MainPage = () => {
                     {projects.map((project) => (
                         <li key={project.title} className="project-card">
                             <div className="project-rep">
-                                <img src={project.image} alt={project.title} 
-                                onError={(e) => {
-                                    e.target.onerror = null;
-                                    e.target.src = '/img/project-placeholder.jpg';
-                                }}/>
+                                <img src={project.image || images.project_placeholder} alt={project.title} />
                                 <div className="project-title">
                                     <span>{project.category}</span>
                                     <h2>{project.title}</h2>
@@ -89,7 +87,7 @@ const MainPage = () => {
             <section id="about" className="section about-section">
                 <div className="about-content">
                     <div className="about-image">
-                        <img src="/img/invictus-img.jpg" alt="Invictus Company" />
+                        <img src={images.about_img} alt="Invictus Company" />
 
                         <div className="floating-badge">
                             <h3><span>98</span>%</h3>

@@ -1,4 +1,4 @@
-import logoImg from '/img/logo.jpg'
+import logoImg from '../assets/img/logo.jpg'
 import { Link } from 'react-router-dom'
 import { IoIosClose, IoMdMenu } from "react-icons/io";
 import { useState, useEffect } from 'react';

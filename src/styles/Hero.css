@@ -8,7 +8,7 @@
     scroll-margin-top: 90px;
     padding: 15px;
 
-    background-image: url("/img/main-bg.jpg");
+    background-image: url("../assets/img/main-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
