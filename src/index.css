@@ -1,12 +1,14 @@
-* {
+@import "tailwindcss";
+
+@layer base {
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}
-
-html {
+    -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
+  }
 }
 
 :root {
@@ -40,4 +42,31 @@ html {
 
      /* Gradients */
     --gradient-primary: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+@utility btn {
+    font-size: var(--text-base);
+    padding: 12px 60px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: scale;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+@utility section {
+    padding: 80px 40px;
+    text-align: center;
+    background: var(--bg);
+    color: black;
+    scroll-margin-top: 70px;
+}
+
+@utility stat-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #bcedff;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--primary-lighter);
 }

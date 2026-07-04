@@ -2,17 +2,19 @@ import logoImg from '../assets/img/logo.jpg'
 import { Link } from 'react-router-dom'
 import { IoIosClose, IoMdMenu } from "react-icons/io";
 import { useState, useEffect } from 'react';
+import { NavLink } from "react-router-dom";
 
 import '../styles/Navbar.css'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
     const navLinks = [
-        { name: "Home", path: "#home" },
-        { name: "Services", path: "#services" },
-        { name: "Projects", path: "#projects" },
-        { name: "About", path: "#about" },
-        { name: "Contact", path: "#contact" }  
+        { name: "Home", path: "" },
+        { name: "Services", path: "/services" },
+        { name: "Projects", path: "/projects" },
+        { name: "About", path: "/about" },
+        { name: "Contact", path: "/contact" }  
     ];
 
     useEffect(() => {
@@ -32,20 +34,20 @@ const Navbar = () => {
     return (
         <header className="navbar">
             <div className="navbar-content">
-                <a href="/" className="navbar-logo-link">
+                <Link to="/" className="navbar-logo-link">
                     <img src={logoImg} alt="Invictus Logo" className="navbar-logo" />
                     <span> Invictus Developments and <br /> Services Corporation</span>
-                </a>
+                </Link>
 
                 <nav className="navbar-links">
                     {navLinks.map((link) => (
-                        <a
+                        <NavLink
                             key={link.name}
-                            href={link.path}
+                            to={link.path}
                             className="navbar-link"
                         >
                             {link.name}
-                        </a>
+                        </NavLink>
                     ))}
                 </nav>
 
@@ -60,14 +62,14 @@ const Navbar = () => {
             {isOpen && (
                 <div className="navbar-mobile-menu">
                     {navLinks.map((link) => (
-                        <a
+                        <NavLink
                             key={link.name}
-                            href={link.path}
+                            to={link.path}
                             className="navbar-mobile-link"
                             onClick={() => setIsOpen(false)}
                         >
                             {link.name}
-                        </a>
+                        </NavLink>
                     ))}
                 </div>
             )}
